@@ -7,3 +7,4 @@
 <% @exercise = Exercise.find(params[:exercise_id]) %>
 <%= link_to 'Edit', edit_exercise_step_path(@exercise, @step) %> |
 <%= link_to 'Back', exercise_steps_path %>
+<%= link_to 'Add a New Step', exercise_steps_path %>
