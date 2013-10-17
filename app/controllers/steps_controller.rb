@@ -21,7 +21,7 @@ class StepsController < ApplicationController
 
   # GET /steps/1/edit
   def edit
-     @step = Step.find(step_params)
+     @step = Step.find(params[:exercise_id])
   end
 
   # POST /steps
@@ -59,7 +59,7 @@ class StepsController < ApplicationController
   def destroy
     @step.destroy
     respond_to do |format|
-      format.html { redirect_to steps_url }
+      format.html { redirect_to exercise_steps_url }
       format.json { head :no_content }
     end
   end
@@ -76,6 +76,6 @@ class StepsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def step_params
-      params.require(:step).permit(:step, :id)
+      params.require(:step).permit(:step, :exercise_id,:id)
     end
 end

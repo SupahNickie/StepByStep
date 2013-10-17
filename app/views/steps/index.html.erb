@@ -13,9 +13,9 @@
     <% @steps.each do |step| %>
       <tr>
         <td><%= step.step %></td>
-        <td><%= link_to 'Show',  exercise_step_path(@exercise, @step) %></td>
-        <td><%= link_to 'Edit', edit_exercise_step_path(@exercise, @step) %></td>
-        <td><%= link_to 'Destroy', exercise_step_path(@exercise, @step), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show',  exercise_step_path(@exercise, step) %></td>
+        <td><%= link_to 'Edit', edit_exercise_step_path(@exercise, step) %></td>
+        <td><%= link_to 'Destroy', exercise_step_path(@exercise, step), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
