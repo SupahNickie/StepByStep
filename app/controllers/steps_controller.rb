@@ -5,29 +5,29 @@ class StepsController < ApplicationController
   # GET /steps
   # GET /steps.json
   def index
-    @steps = Step.all
+    @steps = @exercise.steps.all
   end
 
   # GET /steps/1
   # GET /steps/1.json
   def show
-    @step = Step.find(params[:id])
+    @step = @exercise.steps.find(params[:id])
   end
 
   # GET /steps/new
   def new
-    @step = Step.new
+    @step = @exercise.steps.new
   end
 
   # GET /steps/1/edit
   def edit
-     @step = Step.find(params[:id])
+     @step = @exercise.steps.find(params[:id])
   end
 
   # POST /steps
   # POST /steps.json
   def create
-    @step = Step.new(step_params)
+    @step = @exercise.steps.new(step_params)
 
     respond_to do |format|
       if @step.save
